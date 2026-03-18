@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toritseju Besidone — ML/AI Co-op</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ee;
+    --bg2: #edeae1;
+    --ink: #1a1814;
+    --ink2: #3d3a33;
+    --muted: #8c8880;
+    --border: #d8d4ca;
+    --accent: #2d5a3d;
+    --accent-light: #e4ede7;
+    --accent2: #c4622d;
+    --accent2-light: #f5ebe3;
+    --blue: #2b4a8c;
+    --blue-light: #e4eaf5;
+    --card: #fffdf8;
+    --tag-bg: #e8e4d8;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(246,243,238,0.93);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+  }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .nav-name { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--ink); letter-spacing: -0.5px; }
+  .nav-name span { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+  /* HERO */
+  .hero { padding: 90px 0 70px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-light); color: var(--accent); border: 1px solid rgba(45,90,61,0.2); padding: 6px 14px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; margin-bottom: 24px; }
+  .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: blink 2s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(44px, 6vw, 72px); font-weight: 700; line-height: 1.0; letter-spacing: -2px; color: var(--ink); margin-bottom: 16px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-role { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; color: var(--muted); margin-bottom: 20px; }
+  .hero-desc { color: var(--ink2); font-size: 13px; line-height: 1.85; max-width: 500px; margin-bottom: 36px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { padding: 12px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; display: inline-block; transition: all 0.2s; }
+  .btn-solid { background: var(--accent); color: #fff; }
+  .btn-solid:hover { background: #1e3f2b; transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-card { background: var(--card); border: 1px solid var(--border); padding: 28px; position: relative; }
+  .hero-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+  .hero-card-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .hero-card-prog { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .hero-card-school { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+  .hero-card-divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+  .hero-detail { display: flex; justify-content: space-between; margin-bottom: 10px; }
+  .hero-detail-key { font-size: 11px; color: var(--muted); }
+  .hero-detail-val { font-size: 11px; color: var(--ink); font-weight: 500; }
+  .skill-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .chip { font-size: 10px; padding: 4px 10px; border-radius: 2px; letter-spacing: 0.05em; }
+  .chip-green { background: var(--accent-light); color: var(--accent); border: 1px solid rgba(45,90,61,0.2); }
+  .chip-orange { background: var(--accent2-light); color: var(--accent2); border: 1px solid rgba(196,98,45,0.2); }
+  .chip-blue { background: var(--blue-light); color: var(--blue); border: 1px solid rgba(43,74,140,0.2); }
+  .chip-neutral { background: var(--tag-bg); color: var(--ink2); border: 1px solid var(--border); }
+
+  /* SECTIONS */
+  section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+  .sec-header { margin-bottom: 48px; }
+  .sec-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent2); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .sec-eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .sec-title { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 600; letter-spacing: -1px; line-height: 1.1; }
+  .sec-title em { font-style: italic; color: var(--accent); }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .skill-card { background: var(--card); border: 1px solid var(--border); padding: 28px; transition: border-color 0.25s, transform 0.25s; position: relative; overflow: hidden; }
+  .skill-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .skill-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+  .skill-emoji { font-size: 26px; }
+  .skill-card-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink); margin-bottom: 6px; }
+  .skill-card-desc { color: var(--muted); font-size: 12px; line-height: 1.8; margin-bottom: 16px; }
+  .skill-card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .stag { font-size: 10px; padding: 3px 8px; background: var(--tag-bg); color: var(--ink2); border: 1px solid var(--border); border-radius: 2px; }
+  .skill-progress { margin-top: 14px; height: 2px; background: var(--border); border-radius: 1px; overflow: hidden; }
+  .skill-progress-bar { height: 100%; border-radius: 1px; transition: width 1.2s ease; }
+
+  /* ANALYTICS */
+  .analytics-intro { color: var(--ink2); font-size: 13px; line-height: 1.85; max-width: 640px; margin-bottom: 40px; }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-bottom: 28px; }
+  .stat-box { background: var(--card); border: 1px solid var(--border); padding: 24px; text-align: center; }
+  .stat-box-num { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+  .stat-box-num span { color: var(--accent); }
+  .stat-box-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .analytics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
+  .chart-card { background: var(--card); border: 1px solid var(--border); padding: 28px; }
+  .chart-card-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px; color: var(--ink); margin-bottom: 4px; }
+  .chart-card-sub { font-size: 11px; color: var(--muted); margin-bottom: 20px; }
+
+  /* PROJECTS */
+  .projects-grid { display: flex; flex-direction: column; gap: 2px; }
+  .proj-card { background: var(--card); border: 1px solid var(--border); padding: 32px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; transition: border-color 0.25s; position: relative; }
+  .proj-card:hover { border-color: var(--accent2); }
+  .proj-num { font-family: 'Fraunces', serif; font-size: 11px; color: var(--border); position: absolute; top: 32px; right: 32px; }
+  .proj-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .proj-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px; color: var(--ink); margin-bottom: 10px; max-width: 520px; }
+  .proj-desc { color: var(--ink2); font-size: 12px; line-height: 1.85; max-width: 540px; margin-bottom: 16px; }
+  .proj-course { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .proj-course::before { content: '📚'; font-size: 13px; }
+  .proj-outcome { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-light); border: 1px solid rgba(45,90,61,0.2); padding: 6px 14px; font-size: 11px; color: var(--accent); margin-top: 8px; }
+
+  /* COURSES */
+  .courses-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+  .course-row { background: var(--card); border: 1px solid var(--border); padding: 20px 24px; display: flex; align-items: center; gap: 16px; transition: border-color 0.2s; }
+  .course-row:hover { border-color: var(--accent); }
+  .course-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: var(--bg2); border: 1px solid var(--border); }
+  .course-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 13px; color: var(--ink); }
+  .course-code { font-size: 11px; color: var(--muted); }
+  .course-grade { margin-left: auto; font-size: 12px; font-weight: 600; color: var(--accent); }
+
+  /* CONTACT */
+  .contact-split { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .contact-left { background: var(--accent); padding: 48px; }
+  .contact-left h3 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px; }
+  .contact-left p { color: rgba(255,255,255,0.75); font-size: 12px; line-height: 1.85; margin-bottom: 28px; }
+  .contact-avail { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); padding: 8px 16px; font-size: 10px; color: #fff; letter-spacing: 0.12em; text-transform: uppercase; }
+  .avail-dot { width: 6px; height: 6px; border-radius: 50%; background: #a8ffb8; animation: blink 2s ease-in-out infinite; }
+  .contact-right { background: var(--card); border: 1px solid var(--border); padding: 48px; }
+  .contact-links { list-style: none; }
+  .contact-links li a { display: flex; align-items: center; gap: 14px; color: var(--ink2); text-decoration: none; font-size: 13px; padding: 14px 0; border-bottom: 1px solid var(--border); transition: color 0.2s; }
+  .contact-links li a:hover { color: var(--accent); }
+  .clink-icon { width: 34px; height: 34px; background: var(--bg2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+
+  footer { padding: 28px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  footer p { font-size: 11px; color: var(--muted); }
+  .footer-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .skills-grid, .courses-grid, .analytics-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2,1fr); }
+    .contact-split { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .proj-card { grid-template-columns: 1fr; }
+    .proj-num { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Toritseju <span>Besidone</span></div>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#analytics">Analytics</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="hero-badge"><div class="hero-badge-dot"></div> Seeking ML/AI Co-op · Summer 2026</div>
+      <h1>Toritseju<br><em>Besidone</em></h1>
+      <p class="hero-role">Artifcial Intelligence and Machine Learning Student · Fanshawe College · Final Year</p>
+      <p class="hero-desc">
+        I'm an Artifcial Intelligence and Machine Learning Student student passionate about building ML models and turning messy data into clear insights.
+        I've worked across the full pipeline — from SQL queries and Excel analysis to Python models and Power BI dashboards — through coursework and personal projects.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-solid">See My Projects</a>
+        <a href="#contact" class="btn btn-outline">Reach Out</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label">Student Profile</div>
+      <div class="hero-card-prog">AI/ML, Data Analyst</div>
+      <div class="hero-card-school">Fanshawe College · Class of 2026</div>
+      <hr class="hero-card-divider">
+      <div class="hero-detail"><span class="hero-detail-key">GPA</span><span class="hero-detail-val">3.81 / 4.0</span></div>
+      <div class="hero-detail"><span class="hero-detail-key">Year</span><span class="hero-detail-val">Final Year</span></div>
+      <div class="hero-detail"><span class="hero-detail-key">Co-op Term</span><span class="hero-detail-val">1st Co-op</span></div>
+      <div class="hero-detail"><span class="hero-detail-key">Location</span><span class="hero-detail-val">London, ON · Remote OK</span></div>
+      <hr class="hero-card-divider">
+      <div style="font-size:10px;color:var(--muted);margin-bottom:10px;letter-spacing:0.1em;text-transform:uppercase;">Tools I've Used</div>
+      <div class="skill-chips">
+        <span class="chip chip-green">Python</span>
+        <span class="chip chip-orange">SQL</span>
+        <span class="chip chip-blue">Power BI</span>
+        <span class="chip chip-neutral">Excel</span>
+        <span class="chip chip-green">LLMs</span>
+        <span class="chip chip-neutral">PowerPoint</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-eyebrow">Technical Skills</div>
+      <h2 class="sec-title">What I've <em>Learned</em> So Far</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-card-top"><span class="skill-emoji">🐍</span><span class="chip chip-green" style="font-size:9px;">Comfortable</span></div>
+        <div class="skill-card-name">Python</div>
+        <div class="skill-card-desc">Used across courses for data wrangling, building ML models, and visualisation. Comfortable with the core scientific stack and starting to explore model deployment.</div>
+        <div class="skill-card-tags"><span class="stag">pandas</span><span class="stag">numpy</span><span class="stag">scikit-learn</span><span class="stag">matplotlib</span><span class="stag">seaborn</span><span class="stag">Google Collab</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:78%;background:var(--accent)"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-top"><span class="skill-emoji">🗄️</span><span class="chip chip-orange" style="font-size:9px;">Comfortable</span></div>
+        <div class="skill-card-name">SQL</div>
+        <div class="skill-card-desc">Learned in my databases course — writing queries, joins, aggregations, and subqueries. Used SQLite and PostgreSQL for course assignments and personal projects.</div>
+        <div class="skill-card-tags"><span class="stag">SELECT / JOIN</span><span class="stag">Aggregations</span><span class="stag">Subqueries</span><span class="stag">PostgreSQL</span><span class="stag">SQLite</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:72%;background:var(--accent2)"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-top"><span class="skill-emoji">🤖</span><span class="chip chip-blue" style="font-size:9px;">Learning</span></div>
+        <div class="skill-card-name">AI Agent-Driven E-Commerce Platform (Medusa)</div>
+        <div class="skill-card-desc">Built a working e-commerce storefront on Medusa — an open-source headless commerce platform — and extended it with autonomous AI agents using Gemini's API and LangChain. The agents handle real store workflows end-to-end, from product discovery to order support, without hardcoded logic. Gained hands-on experience designing multi-step agent pipelines and connecting LLM outputs to a live Medusa backend.</div>
+        <div class="skill-card-tags"><span class="stag">OpenAI API</span><span class="stag">LangChain</span><span class="stag">Prompt Engineering</span><span class="stag">RAG basics</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:55%;background:var(--blue)"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-top"><span class="skill-emoji">📊</span><span class="chip chip-blue" style="font-size:9px;">Comfortable</span></div>
+        <div class="skill-card-name">Power BI</div>
+        <div class="skill-card-desc">Pulled live trending video data using the YouTube Data API and loaded it into Power BI to explore what drives viewership. Built visualisations covering top categories, view and like trends, and regional breakdowns. A hands-on intro to working with a real API, cleaning the response data, and turning it into a readable dashboard.</div>
+        <div class="skill-card-tags"><span class="stag">DAX basics</span><span class="stag">Dashboards</span><span class="stag">Power Query</span><span class="stag">Data Modelling</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:65%;background:var(--blue)"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-top"><span class="skill-emoji">📗</span><span class="chip chip-green" style="font-size:9px;">Comfortable</span></div>
+        <div class="skill-card-name">Excel</div>
+        <div class="skill-card-desc">Strong foundation from statistics courses. Comfortable with pivot tables, XLOOKUP, and building clean summary reports. Used for exploratory analysis before scripting in Python.</div>
+        <div class="skill-card-tags"><span class="stag">Pivot Tables</span><span class="stag">XLOOKUP</span><span class="stag">Charts</span><span class="stag">Conditional Formatting</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:75%;background:var(--accent)"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-top"><span class="skill-emoji">📑</span><span class="chip chip-neutral" style="font-size:9px;">Comfortable</span></div>
+        <div class="skill-card-name">PowerPoint</div>
+        <div class="skill-card-desc">Presented data science project findings to classmates and professors. Practiced making technical content approachable — turning model results and charts into clear visual narratives.</div>
+        <div class="skill-card-tags"><span class="stag">Data Storytelling</span><span class="stag">Visual Design</span><span class="stag">Project Decks</span><span class="stag">Slide Layouts</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:70%;background:var(--muted)"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA ANALYTICS -->
+<section id="analytics">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-eyebrow">Data Analytics</div>
+      <h2 class="sec-title">Hands-On with <em>Real Data</em></h2>
+    </div>
+    <p class="analytics-intro">
+      Through coursework and personal projects I've practised the full analytics workflow — collecting and cleaning data, running SQL queries, building Python visualisations, and summarising findings in Power BI and Excel. Below is a snapshot of the work I've done across my two years.
+    </p>
+    <div class="stats-row reveal">
+      <div class="stat-box"><div class="stat-box-num">6<span>+</span></div><div class="stat-box-label">Datasets Analysed</div></div>
+      <div class="stat-box"><div class="stat-box-num">4<span></span></div><div class="stat-box-label">ML Models Built</div></div>
+      <div class="stat-box"><div class="stat-box-num">3<span></span></div><div class="stat-box-label">Dashboards Created</div></div>
+      <div class="stat-box"><div class="stat-box-num">8<span>+</span></div><div class="stat-box-label">Course Projects</div></div>
+    </div>
+    <div class="analytics-grid reveal">
+      <div class="chart-card">
+        <div class="chart-card-title">Estimated Practice Hours by Tool</div>
+        <div class="chart-card-sub">Hours spent across courses and personal projects</div>
+        <canvas id="barChart" height="230"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">Course Grade Breakdown</div>
+        <div class="chart-card-sub">Distribution across data science-related courses</div>
+        <canvas id="donutChart" height="230"></canvas>
+      </div>
+    </div>
+    <div class="analytics-grid reveal" style="margin-top:2px;">
+      <div class="chart-card">
+        <div class="chart-card-title">Skill Confidence Over Time</div>
+        <div class="chart-card-sub">Self-rated confidence per term (1 = beginner, 5 = confident)</div>
+        <canvas id="lineChart" height="230"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">Tool Usage Across Projects</div>
+        <div class="chart-card-sub">How often each tool appeared in my school projects</div>
+        <canvas id="radarChart" height="230"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-eyebrow">School Projects</div>
+      <h2 class="sec-title">Things I've <em>Built</em></h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="proj-card reveal">
+        <div>
+          <div class="proj-tags"><span class="chip chip-green">Python</span></div>
+          <div class="proj-course"> NLP I & II </div>
+          <h3 class="proj-title">Sentiment Analysis</h3>
+          <p class="proj-desc">Built a text sentiment classifier across my NLP courses, categorising input text as positive, negative, or neutral. Worked through the full NLP pipeline — text preprocessing, feature extraction, and training classification models. Applied techniques like tokenisation, TF-IDF, and evaluated model performance across all three sentiment classes.</p>
+          <div class="skill-chips"><span class="chip chip-green">Python</span><span class="chip chip-green">NLTK</span><span class="chip chip-neutral">TF-IDF</span><span class="chip chip-neutral">scikit-learn</span></div>
+          <div class="proj-outcome">✓ 3-class sentiment classifier built end-to-end </div>
+        </div>
+        <div class="proj-num">01</div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div>
+          <div class="proj-tags"><span class="chip chip-orange">SQL</span><span class="chip chip-blue">Power BI</span></div>
+          <div class="proj-course">STAT 341 — Business Analytics</div>
+          <h3 class="proj-title">Retail Sales Analytics Dashboard</h3>
+          <p class="proj-desc">Queried a 50K-row retail transactions dataset in PostgreSQL — writing joins, window functions, and CTEs to extract KPIs. Imported results into Power BI and built an interactive dashboard with monthly sales trends, regional breakdowns, and product-level filters. Presented to class.</p>
+          <div class="skill-chips"><span class="chip chip-orange">PostgreSQL</span><span class="chip chip-blue">Power BI</span><span class="chip chip-neutral">DAX</span><span class="chip chip-neutral">Excel</span></div>
+          <div class="proj-outcome">✓ Top 3 project in class of 30</div>
+        </div>
+        <div class="proj-num">02</div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div>
+          <div class="proj-tags"><span class="chip chip-green">Python</span><span class="chip chip-orange">SQL</span></div>
+          <div class="proj-course">CS 338 — Introduction to Machine Learning</div>
+          <h3 class="proj-title">Student Grade Prediction Model</h3>
+          <p class="proj-desc">Used a Kaggle student performance dataset — cleaned data in pandas, ran exploratory analysis, then trained and compared logistic regression, decision tree, and random forest classifiers with scikit-learn. Wrote a short SQL schema to simulate how the data might be stored in a school database. Summarised results in PowerPoint for the final presentation.</p>
+          <div class="skill-chips"><span class="chip chip-green">scikit-learn</span><span class="chip chip-green">pandas</span><span class="chip chip-orange">SQL</span><span class="chip chip-neutral">PowerPoint</span></div>
+          <div class="proj-outcome">✓ Random Forest: 88% test accuracy</div>
+        </div>
+        <div class="proj-num">03</div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div>
+          <div class="proj-tags"><span class="chip chip-neutral">Excel</span><span class="chip chip-neutral">PowerPoint</span></div>
+          <div class="proj-course">STAT 230 — Statistics for Data Science</div>
+          <h3 class="proj-title">Housing Market Exploratory Analysis</h3>
+          <p class="proj-desc">Downloaded a publicly available housing price dataset and performed full exploratory analysis in Excel — cleaning missing values, building pivot tables by region and year, and charting price trends. Wrote a summary report and presented a 10-slide deck covering methodology, visualisations, and key takeaways.</p>
+          <div class="skill-chips"><span class="chip chip-neutral">Excel</span><span class="chip chip-neutral">Pivot Tables</span><span class="chip chip-neutral">PowerPoint</span><span class="chip chip-green">Data Cleaning</span></div>
+          <div class="proj-outcome">✓ 92% course grade</div>
+        </div>
+        <div class="proj-num">04</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-eyebrow">Academic Background</div>
+      <h2 class="sec-title">Relevant <em>Coursework</em></h2>
+    </div>
+    <div class="courses-grid">
+      <div class="course-row reveal"><div class="course-icon">🧠</div><div><div class="course-name">Introduction to Machine Learning</div><div class="course-code">CS 338</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">📊</div><div><div class="course-name">Statistics for Data Science</div><div class="course-code">STAT 230</div></div><div class="course-grade">A−</div></div>
+      <div class="course-row reveal"><div class="course-icon">🗄️</div><div><div class="course-name">Databases &amp; Information Systems</div><div class="course-code">CS 348</div></div><div class="course-grade">B+</div></div>
+      <div class="course-row reveal"><div class="course-icon">📈</div><div><div class="course-name">Business Analytics</div><div class="course-code">STAT 341</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">🐍</div><div><div class="course-name">Data Analysis with Python</div><div class="course-code">CS 116</div></div><div class="course-grade">A+</div></div>
+      <div class="course-row reveal"><div class="course-icon">🤖</div><div><div class="course-name">Intro to NLP &amp; Generative AI</div><div class="course-code">CS 492</div></div><div class="course-grade">A−</div></div>
+      <div class="course-row reveal"><div class="course-icon">🔢</div><div><div class="course-name">Linear Algebra for Data Science</div><div class="course-code">MATH 136</div></div><div class="course-grade">B+</div></div>
+      <div class="course-row reveal"><div class="course-icon">📉</div><div><div class="course-name">Applied Regression &amp; Forecasting</div><div class="course-code">STAT 332</div></div><div class="course-grade">A−</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="border-bottom:none;padding-bottom:0;">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-eyebrow">Get in Touch</div>
+      <h2 class="sec-title">Let's <em>Connect</em></h2>
+    </div>
+    <div class="contact-split">
+      <div class="contact-left">
+        <h3>Looking for my first ML/AI co-op.</h3>
+        <p>I'm eager to apply what I've learned in school to real problems. I work hard, learn fast, and I'm genuinely excited about data and AI. If you have a co-op role or just want to chat, I'd love to hear from you.</p>
+        <div class="contact-avail"><div class="avail-dot"></div> Available — Winter &amp; Summer 2026</div>
+      </div>
+      <div class="contact-right">
+        <ul class="contact-links">
+          <li><a href="mailto:jamie.park@uwaterloo.ca"><span class="clink-icon">✉</span> jamie.park@uwaterloo.ca</a></li>
+          <li><a href="#"><span class="clink-icon">in</span> linkedin.com/in/jamiepark</a></li>
+          <li><a href="#"><span class="clink-icon">gh</span> github.com/jamiepark-ds</a></li>
+          <li><a href="#"><span class="clink-icon">📄</span> Download Resume (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <p>© 2026 Jamie Park · Data Science · University of Waterloo</p>
+    <div class="footer-chips">
+      <span class="chip chip-green">Python</span>
+      <span class="chip chip-orange">SQL</span>
+      <span class="chip chip-blue">Power BI</span>
+      <span class="chip chip-neutral">Excel</span>
+      <span class="chip chip-green">LLMs</span>
+    </div>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+  const green  = '#2d5a3d', orange = '#c4622d', blue = '#2b4a8c';
+  const muted  = '#8c8880', borderC = '#d8d4ca', bg = '#fffdf8';
+
+  Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+  Chart.defaults.font.size   = 11;
+  Chart.defaults.color       = muted;
+
+  // Bar — hours by tool
+  new Chart(document.getElementById('barChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Python', 'SQL', 'Excel', 'Power BI', 'LLMs', 'PowerPoint'],
+      datasets: [{ label: 'Hours', data: [120, 65, 55, 40, 30, 45],
+        backgroundColor: [green, orange, '#6b8f5e', blue, '#7c6af5', muted],
+        borderRadius: 3, borderWidth: 0 }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: borderC } },
+        y: { grid: { color: borderC }, beginAtZero: true }
+      }
+    }
+  });
+
+  // Donut — grades
+  new Chart(document.getElementById('donutChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['A / A+', 'A−', 'B+'],
+      datasets: [{ data: [3, 3, 2],
+        backgroundColor: [green, '#6b8f5e', orange],
+        borderColor: bg, borderWidth: 4, hoverOffset: 6 }]
+    },
+    options: {
+      responsive: true, cutout: '62%',
+      plugins: { legend: { position: 'bottom', labels: { padding: 16, boxWidth: 12 } } }
+    }
+  });
+
+  // Line — confidence
+  new Chart(document.getElementById('lineChart'), {
+    type: 'line',
+    data: {
+      labels: ['1A', '1B', '2A', '2B'],
+      datasets: [
+        { label: 'Python',   data: [2, 3, 4, 4.5], borderColor: green,  backgroundColor: 'rgba(45,90,61,0.07)',   tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 },
+        { label: 'SQL',      data: [1, 2, 3.5, 4],  borderColor: orange, backgroundColor: 'rgba(196,98,45,0.07)', tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 },
+        { label: 'Power BI', data: [1, 1.5, 3, 3.8],borderColor: blue,   backgroundColor: 'rgba(43,74,140,0.07)', tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 },
+        { label: 'LLMs',     data: [1, 1, 2, 3],    borderColor: '#7c6af5', backgroundColor: 'rgba(124,106,245,0.07)', tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        x: { grid: { color: borderC } },
+        y: { grid: { color: borderC }, min: 0, max: 5, ticks: { stepSize: 1 } }
+      },
+      plugins: { legend: { position: 'bottom', labels: { padding: 14, boxWidth: 12 } } }
+    }
+  });
+
+  // Radar — tool usage
+  new Chart(document.getElementById('radarChart'), {
+    type: 'radar',
+    data: {
+      labels: ['Python', 'SQL', 'Power BI', 'Excel', 'LLMs', 'PowerPoint'],
+      datasets: [{ label: 'Times Used', data: [4, 3, 2, 3, 1, 4],
+        backgroundColor: 'rgba(45,90,61,0.15)', borderColor: green,
+        pointBackgroundColor: green, borderWidth: 2, pointRadius: 4 }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        r: { beginAtZero: true, max: 5, ticks: { stepSize: 1, color: muted },
+          grid: { color: borderC }, pointLabels: { color: '#3d3a33', font: { size: 11 } } }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 70);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Skill bar animate
+  const barObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const b = e.target.querySelector('.skill-progress-bar');
+        if (b) { const w = b.style.width; b.style.width = '0'; setTimeout(() => b.style.width = w, 200); }
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.skill-card').forEach(el => barObs.observe(el));
+</script>
+</body>
+</html>
