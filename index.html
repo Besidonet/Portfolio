@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toritseju Besidone — ML/AI Co-op</title>
+<title>Toju Besidone — Data Analyst</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -31,8 +31,6 @@
     font-size: 13px;
     line-height: 1.75;
   }
-
-  /* NAV */
   nav {
     position: sticky; top: 0; z-index: 100;
     background: rgba(246,243,238,0.93);
@@ -46,7 +44,6 @@
   .nav-links { display: flex; gap: 28px; list-style: none; }
   .nav-links a { color: var(--muted); text-decoration: none; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
-
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
 
   /* HERO */
@@ -64,7 +61,6 @@
   .btn-solid:hover { background: #1e3f2b; transform: translateY(-1px); }
   .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--border); }
   .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-
   .hero-card { background: var(--card); border: 1px solid var(--border); padding: 28px; position: relative; }
   .hero-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
   .hero-card-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
@@ -102,7 +98,7 @@
   .skill-progress { margin-top: 14px; height: 2px; background: var(--border); border-radius: 1px; overflow: hidden; }
   .skill-progress-bar { height: 100%; border-radius: 1px; transition: width 1.2s ease; }
 
-  /* ANALYTICS */
+  /* ANALYTICS SECTION */
   .analytics-intro { color: var(--ink2); font-size: 13px; line-height: 1.85; max-width: 640px; margin-bottom: 40px; }
   .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-bottom: 28px; }
   .stat-box { background: var(--card); border: 1px solid var(--border); padding: 24px; text-align: center; }
@@ -140,8 +136,6 @@
   .contact-left { background: var(--accent); padding: 48px; }
   .contact-left h3 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px; }
   .contact-left p { color: rgba(255,255,255,0.75); font-size: 12px; line-height: 1.85; margin-bottom: 28px; }
-  .contact-avail { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); padding: 8px 16px; font-size: 10px; color: #fff; letter-spacing: 0.12em; text-transform: uppercase; }
-  .avail-dot { width: 6px; height: 6px; border-radius: 50%; background: #a8ffb8; animation: blink 2s ease-in-out infinite; }
   .contact-right { background: var(--card); border: 1px solid var(--border); padding: 48px; }
   .contact-links { list-style: none; }
   .contact-links li a { display: flex; align-items: center; gap: 14px; color: var(--ink2); text-decoration: none; font-size: 13px; padding: 14px 0; border-bottom: 1px solid var(--border); transition: color 0.2s; }
@@ -152,7 +146,6 @@
   footer p { font-size: 11px; color: var(--muted); }
   .footer-chips { display: flex; gap: 6px; flex-wrap: wrap; }
 
-  /* REVEAL */
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -172,7 +165,7 @@
 
 <nav>
   <div class="wrap">
-    <div class="nav-name">Toritseju <span>Besidone</span></div>
+    <div class="nav-name">Toju <span>Besidone</span></div>
     <ul class="nav-links">
       <li><a href="#skills">Skills</a></li>
       <li><a href="#analytics">Analytics</a></li>
@@ -187,36 +180,34 @@
 <div class="wrap">
   <div class="hero">
     <div>
-      <div class="hero-badge"><div class="hero-badge-dot"></div> Seeking ML/AI Co-op · Summer 2026</div>
-      <h1>Toritseju<br><em>Besidone</em></h1>
-      <p class="hero-role">Artifcial Intelligence and Machine Learning Student · Fanshawe College · Final Year</p>
+      <div class="hero-badge"><div class="hero-badge-dot"></div> Data Analyst · Open to Opportunities</div>
+      <h1>Toju<br><em>Besidone</em></h1>
+      <p class="hero-role">Data Analyst · SQL · Power BI · Python · Vaughan, ON</p>
       <p class="hero-desc">
-        I'm an Artifcial Intelligence and Machine Learning Student student passionate about building ML models and turning messy data into clear insights.
-        I've worked across the full pipeline — from SQL queries and Excel analysis to Python models and Power BI dashboards — through coursework and personal projects.
+        I turn raw data into decisions. With a 3.89 GPA from Fanshawe College's AI &amp; ML programme and hands-on work across SQL databases, Power BI dashboards, and Python analysis pipelines, I'm ready to help teams understand their data and act on it. I care about clarity — in queries, in charts, and in the stories data tells.
       </p>
       <div class="hero-ctas">
-        <a href="#projects" class="btn btn-solid">See My Projects</a>
+        <a href="#projects" class="btn btn-solid">See My Work</a>
         <a href="#contact" class="btn btn-outline">Reach Out</a>
       </div>
     </div>
     <div class="hero-card">
-      <div class="hero-card-label">Student Profile</div>
-      <div class="hero-card-prog">AI/ML, Data Analyst</div>
-      <div class="hero-card-school">Fanshawe College · Class of 2026</div>
+      <div class="hero-card-label">Analyst Profile</div>
+      <div class="hero-card-prog">Data Analyst</div>
+      <div class="hero-card-school">Fanshawe College AI/ML · Class of 2026</div>
       <hr class="hero-card-divider">
-      <div class="hero-detail"><span class="hero-detail-key">GPA</span><span class="hero-detail-val">3.81 / 4.0</span></div>
-      <div class="hero-detail"><span class="hero-detail-key">Year</span><span class="hero-detail-val">Final Year</span></div>
-      <div class="hero-detail"><span class="hero-detail-key">Co-op Term</span><span class="hero-detail-val">1st Co-op</span></div>
-      <div class="hero-detail"><span class="hero-detail-key">Location</span><span class="hero-detail-val">London, ON · Remote OK</span></div>
+      <div class="hero-detail"><span class="hero-detail-key">GPA</span><span class="hero-detail-val">3.89 / 4.0</span></div>
+      <div class="hero-detail"><span class="hero-detail-key">Honours</span><span class="hero-detail-val">Dean's Honour Roll</span></div>
+      <div class="hero-detail"><span class="hero-detail-key">Graduated</span><span class="hero-detail-val">April 25, 2026</span></div>
+      <div class="hero-detail"><span class="hero-detail-key">Location</span><span class="hero-detail-val">Vaughan, ON · Remote OK</span></div>
       <hr class="hero-card-divider">
-      <div style="font-size:10px;color:var(--muted);margin-bottom:10px;letter-spacing:0.1em;text-transform:uppercase;">Tools I've Used</div>
+      <div style="font-size:10px;color:var(--muted);margin-bottom:10px;letter-spacing:0.1em;text-transform:uppercase;">Core Toolkit</div>
       <div class="skill-chips">
-        <span class="chip chip-green">Python</span>
         <span class="chip chip-orange">SQL</span>
         <span class="chip chip-blue">Power BI</span>
+        <span class="chip chip-green">Python</span>
         <span class="chip chip-neutral">Excel</span>
-        <span class="chip chip-green">LLMs</span>
-        <span class="chip chip-neutral">PowerPoint</span>
+        <span class="chip chip-neutral">Data Storytelling</span>
       </div>
     </div>
   </div>
@@ -227,51 +218,58 @@
   <div class="wrap">
     <div class="sec-header">
       <div class="sec-eyebrow">Technical Skills</div>
-      <h2 class="sec-title">What I've <em>Learned</em> So Far</h2>
+      <h2 class="sec-title">Tools I Use to <em>Find Answers</em></h2>
     </div>
     <div class="skills-grid">
+
       <div class="skill-card reveal">
-        <div class="skill-card-top"><span class="skill-emoji">🐍</span><span class="chip chip-green" style="font-size:9px;">Comfortable</span></div>
-        <div class="skill-card-name">Python</div>
-        <div class="skill-card-desc">Used across courses for data wrangling, building ML models, and visualisation. Comfortable with the core scientific stack and starting to explore model deployment.</div>
-        <div class="skill-card-tags"><span class="stag">pandas</span><span class="stag">numpy</span><span class="stag">scikit-learn</span><span class="stag">matplotlib</span><span class="stag">seaborn</span><span class="stag">Google Collab</span></div>
-        <div class="skill-progress"><div class="skill-progress-bar" style="width:78%;background:var(--accent)"></div></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-card-top"><span class="skill-emoji">🗄️</span><span class="chip chip-orange" style="font-size:9px;">Comfortable</span></div>
+        <div class="skill-card-top"><span class="skill-emoji">🗄️</span><span class="chip chip-orange" style="font-size:9px;">Strong</span></div>
         <div class="skill-card-name">SQL</div>
-        <div class="skill-card-desc">Learned in my databases course — writing queries, joins, aggregations, and subqueries. Used SQLite and PostgreSQL for course assignments and personal projects.</div>
-        <div class="skill-card-tags"><span class="stag">SELECT / JOIN</span><span class="stag">Aggregations</span><span class="stag">Subqueries</span><span class="stag">PostgreSQL</span><span class="stag">SQLite</span></div>
-        <div class="skill-progress"><div class="skill-progress-bar" style="width:72%;background:var(--accent2)"></div></div>
+        <div class="skill-card-desc">My go-to for pulling and shaping data. Comfortable writing multi-table joins, window functions, aggregations, CTEs, and subqueries across both SQLite and PostgreSQL. Used on coursework, a full schema design project, and personal apps.</div>
+        <div class="skill-card-tags"><span class="stag">JOINs</span><span class="stag">Window Functions</span><span class="stag">CTEs</span><span class="stag">Aggregations</span><span class="stag">PostgreSQL</span><span class="stag">SQLite</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:78%;background:var(--accent2)"></div></div>
       </div>
+
       <div class="skill-card reveal">
-        <div class="skill-card-top"><span class="skill-emoji">🤖</span><span class="chip chip-blue" style="font-size:9px;">Learning</span></div>
-        <div class="skill-card-name">AI Agent-Driven E-Commerce Platform (Medusa)</div>
-        <div class="skill-card-desc">Built a working e-commerce storefront on Medusa — an open-source headless commerce platform — and extended it with autonomous AI agents using Gemini's API and LangChain. The agents handle real store workflows end-to-end, from product discovery to order support, without hardcoded logic. Gained hands-on experience designing multi-step agent pipelines and connecting LLM outputs to a live Medusa backend.</div>
-        <div class="skill-card-tags"><span class="stag">OpenAI API</span><span class="stag">LangChain</span><span class="stag">Prompt Engineering</span><span class="stag">RAG basics</span></div>
-        <div class="skill-progress"><div class="skill-progress-bar" style="width:55%;background:var(--blue)"></div></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-card-top"><span class="skill-emoji">📊</span><span class="chip chip-blue" style="font-size:9px;">Comfortable</span></div>
+        <div class="skill-card-top"><span class="skill-emoji">📊</span><span class="chip chip-blue" style="font-size:9px;">Strong</span></div>
         <div class="skill-card-name">Power BI</div>
-        <div class="skill-card-desc">Pulled live trending video data using the YouTube Data API and loaded it into Power BI to explore what drives viewership. Built visualisations covering top categories, view and like trends, and regional breakdowns. A hands-on intro to working with a real API, cleaning the response data, and turning it into a readable dashboard.</div>
-        <div class="skill-card-tags"><span class="stag">DAX basics</span><span class="stag">Dashboards</span><span class="stag">Power Query</span><span class="stag">Data Modelling</span></div>
-        <div class="skill-progress"><div class="skill-progress-bar" style="width:65%;background:var(--blue)"></div></div>
+        <div class="skill-card-desc">Built multi-page interactive dashboards from live API data — covering KPI cards, bar charts, treemaps, line charts, pie charts, and Azure Maps. Comfortable with Power Query for data shaping and DAX for calculated measures.</div>
+        <div class="skill-card-tags"><span class="stag">DAX</span><span class="stag">Power Query</span><span class="stag">Dashboards</span><span class="stag">Data Modelling</span><span class="stag">Azure Maps</span><span class="stag">Cross-filtering</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:72%;background:var(--blue)"></div></div>
       </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-card-top"><span class="skill-emoji">🐍</span><span class="chip chip-green" style="font-size:9px;">Strong</span></div>
+        <div class="skill-card-name">Python for Analysis</div>
+        <div class="skill-card-desc">Used Python throughout the programme for data wrangling, EDA, visualisation, and API data collection. Comfortable pulling JSON from REST APIs, cleaning with pandas, and charting with matplotlib and seaborn.</div>
+        <div class="skill-card-tags"><span class="stag">pandas</span><span class="stag">numpy</span><span class="stag">matplotlib</span><span class="stag">seaborn</span><span class="stag">REST APIs</span><span class="stag">requests</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:80%;background:var(--accent)"></div></div>
+      </div>
+
       <div class="skill-card reveal">
         <div class="skill-card-top"><span class="skill-emoji">📗</span><span class="chip chip-green" style="font-size:9px;">Comfortable</span></div>
         <div class="skill-card-name">Excel</div>
-        <div class="skill-card-desc">Strong foundation from statistics courses. Comfortable with pivot tables, XLOOKUP, and building clean summary reports. Used for exploratory analysis before scripting in Python.</div>
-        <div class="skill-card-tags"><span class="stag">Pivot Tables</span><span class="stag">XLOOKUP</span><span class="stag">Charts</span><span class="stag">Conditional Formatting</span></div>
-        <div class="skill-progress"><div class="skill-progress-bar" style="width:75%;background:var(--accent)"></div></div>
+        <div class="skill-card-desc">Strong foundation for quick exploratory analysis — pivot tables, XLOOKUP, conditional formatting, and clean summary charts. Often the first tool I reach for before scripting in Python or loading into Power BI.</div>
+        <div class="skill-card-tags"><span class="stag">Pivot Tables</span><span class="stag">XLOOKUP</span><span class="stag">Charts</span><span class="stag">Data Cleaning</span><span class="stag">Conditional Formatting</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:73%;background:var(--accent)"></div></div>
       </div>
+
       <div class="skill-card reveal">
-        <div class="skill-card-top"><span class="skill-emoji">📑</span><span class="chip chip-neutral" style="font-size:9px;">Comfortable</span></div>
-        <div class="skill-card-name">PowerPoint</div>
-        <div class="skill-card-desc">Presented data science project findings to classmates and professors. Practiced making technical content approachable — turning model results and charts into clear visual narratives.</div>
-        <div class="skill-card-tags"><span class="stag">Data Storytelling</span><span class="stag">Visual Design</span><span class="stag">Project Decks</span><span class="stag">Slide Layouts</span></div>
+        <div class="skill-card-top"><span class="skill-emoji">🧮</span><span class="chip chip-neutral" style="font-size:9px;">Comfortable</span></div>
+        <div class="skill-card-name">Statistics &amp; ML</div>
+        <div class="skill-card-desc">Studied statistics and machine learning formally — regression, classification, clustering, and model evaluation. Useful for knowing when a trend is real, how to validate findings, and where predictive modelling can add value to an analysis.</div>
+        <div class="skill-card-tags"><span class="stag">Regression</span><span class="stag">Classification</span><span class="stag">scikit-learn</span><span class="stag">Model Evaluation</span><span class="stag">A/B thinking</span></div>
+        <div class="skill-progress"><div class="skill-progress-bar" style="width:68%;background:var(--muted)"></div></div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-card-top"><span class="skill-emoji">🗣️</span><span class="chip chip-neutral" style="font-size:9px;">Comfortable</span></div>
+        <div class="skill-card-name">Data Storytelling</div>
+        <div class="skill-card-desc">Presented findings to classmates and professors across multiple projects — translating model results, SQL queries, and dashboards into clear narratives. Comfortable with both slide decks and written reports as deliverables.</div>
+        <div class="skill-card-tags"><span class="stag">PowerPoint</span><span class="stag">Written Reports</span><span class="stag">Chart Design</span><span class="stag">Executive Summaries</span></div>
         <div class="skill-progress"><div class="skill-progress-bar" style="width:70%;background:var(--muted)"></div></div>
       </div>
+
     </div>
   </div>
 </section>
@@ -280,39 +278,39 @@
 <section id="analytics">
   <div class="wrap">
     <div class="sec-header">
-      <div class="sec-eyebrow">Data Analytics</div>
-      <h2 class="sec-title">Hands-On with <em>Real Data</em></h2>
+      <div class="sec-eyebrow">By the Numbers</div>
+      <h2 class="sec-title">A Snapshot of My <em>Analytical Work</em></h2>
     </div>
     <p class="analytics-intro">
-      Through coursework and personal projects I've practised the full analytics workflow — collecting and cleaning data, running SQL queries, building Python visualisations, and summarising findings in Power BI and Excel. Below is a snapshot of the work I've done across my two years.
+      Across three terms and several personal projects, I've worked the full data workflow — collecting and cleaning data, querying with SQL, visualising in Python and Power BI, and presenting findings to real audiences. Here's what that looks like in aggregate.
     </p>
     <div class="stats-row reveal">
-      <div class="stat-box"><div class="stat-box-num">6<span>+</span></div><div class="stat-box-label">Datasets Analysed</div></div>
-      <div class="stat-box"><div class="stat-box-num">4<span></span></div><div class="stat-box-label">ML Models Built</div></div>
-      <div class="stat-box"><div class="stat-box-num">3<span></span></div><div class="stat-box-label">Dashboards Created</div></div>
-      <div class="stat-box"><div class="stat-box-num">8<span>+</span></div><div class="stat-box-label">Course Projects</div></div>
+      <div class="stat-box"><div class="stat-box-num">8<span>+</span></div><div class="stat-box-label">Datasets Analysed</div></div>
+      <div class="stat-box"><div class="stat-box-num">3<span></span></div><div class="stat-box-label">Dashboards Delivered</div></div>
+      <div class="stat-box"><div class="stat-box-num">13<span></span></div><div class="stat-box-label">Table DB Schema Designed</div></div>
+      <div class="stat-box"><div class="stat-box-num">3.89<span></span></div><div class="stat-box-label">GPA · Dean's Honour Roll</div></div>
     </div>
     <div class="analytics-grid reveal">
       <div class="chart-card">
-        <div class="chart-card-title">Estimated Practice Hours by Tool</div>
-        <div class="chart-card-sub">Hours spent across courses and personal projects</div>
+        <div class="chart-card-title">Estimated Hours by Analytical Tool</div>
+        <div class="chart-card-sub">Time invested across courses and personal projects</div>
         <canvas id="barChart" height="230"></canvas>
       </div>
       <div class="chart-card">
         <div class="chart-card-title">Course Grade Breakdown</div>
-        <div class="chart-card-sub">Distribution across data science-related courses</div>
+        <div class="chart-card-sub">Distribution across the AI/ML programme</div>
         <canvas id="donutChart" height="230"></canvas>
       </div>
     </div>
     <div class="analytics-grid reveal" style="margin-top:2px;">
       <div class="chart-card">
-        <div class="chart-card-title">Skill Confidence Over Time</div>
-        <div class="chart-card-sub">Self-rated confidence per term (1 = beginner, 5 = confident)</div>
+        <div class="chart-card-title">Analytical Skill Confidence Over Time</div>
+        <div class="chart-card-sub">Self-rated per term (1 = beginner, 5 = confident)</div>
         <canvas id="lineChart" height="230"></canvas>
       </div>
       <div class="chart-card">
         <div class="chart-card-title">Tool Usage Across Projects</div>
-        <div class="chart-card-sub">How often each tool appeared in my school projects</div>
+        <div class="chart-card-sub">How often each tool appeared in coursework and projects</div>
         <canvas id="radarChart" height="230"></canvas>
       </div>
     </div>
@@ -323,57 +321,69 @@
 <section id="projects">
   <div class="wrap">
     <div class="sec-header">
-      <div class="sec-eyebrow">School Projects</div>
-      <h2 class="sec-title">Things I've <em>Built</em></h2>
+      <div class="sec-eyebrow">Projects</div>
+      <h2 class="sec-title">Analysis I've <em>Done</em></h2>
     </div>
     <div class="projects-grid">
 
       <div class="proj-card reveal">
         <div>
-          <div class="proj-tags"><span class="chip chip-green">Python</span></div>
-          <div class="proj-course"> NLP I & II </div>
-          <h3 class="proj-title">Sentiment Analysis</h3>
-          <p class="proj-desc">Built a text sentiment classifier across my NLP courses, categorising input text as positive, negative, or neutral. Worked through the full NLP pipeline — text preprocessing, feature extraction, and training classification models. Applied techniques like tokenisation, TF-IDF, and evaluated model performance across all three sentiment classes.</p>
-          <div class="skill-chips"><span class="chip chip-green">Python</span><span class="chip chip-green">NLTK</span><span class="chip chip-neutral">TF-IDF</span><span class="chip chip-neutral">scikit-learn</span></div>
-          <div class="proj-outcome">✓ 3-class sentiment classifier built end-to-end </div>
+          <div class="proj-tags"><span class="chip chip-blue">Power BI</span><span class="chip chip-green">Python</span><span class="chip chip-orange">API</span></div>
+          <div class="proj-course">INFO-6151 — Data Visualization for Machine Learning</div>
+          <h3 class="proj-title">YouTube Trending Videos Analytics Dashboard</h3>
+          <p class="proj-desc">Collected live data on 150 trending YouTube videos using the YouTube Data API v3 — fetching view counts, likes, comments, category labels, and channel subscriber counts via Python. Cleaned and shaped the dataset before loading it into Power BI. Built a three-page interactive report: a storytelling page surfacing the top-performing videos and category breakdown by views; a showcasing page with KPI summary cards, a subscriber comparison bar chart, and a channel treemap; and a data art page using Azure Maps to visualise where trending content originates geographically. All visuals cross-filter each other for exploratory drill-down.</p>
+          <div class="skill-chips"><span class="chip chip-blue">Power BI</span><span class="chip chip-green">Python</span><span class="chip chip-orange">YouTube API v3</span><span class="chip chip-neutral">DAX</span><span class="chip chip-blue">Azure Maps</span><span class="chip chip-neutral">Power Query</span></div>
+          <div class="proj-outcome">✓ 3-page interactive dashboard · live API data · geographic mapping</div>
         </div>
         <div class="proj-num">01</div>
       </div>
 
       <div class="proj-card reveal">
         <div>
-          <div class="proj-tags"><span class="chip chip-orange">SQL</span><span class="chip chip-blue">Power BI</span></div>
-          <div class="proj-course">STAT 341 — Business Analytics</div>
-          <h3 class="proj-title">Retail Sales Analytics Dashboard</h3>
-          <p class="proj-desc">Queried a 50K-row retail transactions dataset in PostgreSQL — writing joins, window functions, and CTEs to extract KPIs. Imported results into Power BI and built an interactive dashboard with monthly sales trends, regional breakdowns, and product-level filters. Presented to class.</p>
-          <div class="skill-chips"><span class="chip chip-orange">PostgreSQL</span><span class="chip chip-blue">Power BI</span><span class="chip chip-neutral">DAX</span><span class="chip chip-neutral">Excel</span></div>
-          <div class="proj-outcome">✓ Top 3 project in class of 30</div>
+          <div class="proj-tags"><span class="chip chip-orange">SQL</span><span class="chip chip-orange">SQLite</span></div>
+          <div class="proj-course">INFO-6120 — Databases: Intro</div>
+          <h3 class="proj-title">Yoober — Ride-Sharing Relational Database</h3>
+          <p class="proj-desc">Designed a fully normalised relational database for a ride-sharing platform from scratch. Mapped out the business domain — users, drivers, passengers, rides, vehicles, licences, availability schedules, addresses, favourite locations, and a two-sided review system — then translated it into a 13-table schema with enforced foreign key relationships throughout. The design uses a subtype pattern (drivers and passengers as specialisations of accounts) to avoid data duplication. Populated with sample data and validated with queries checking referential integrity and business logic constraints across all relationships.</p>
+          <div class="skill-chips"><span class="chip chip-orange">SQLite</span><span class="chip chip-orange">SQL DDL</span><span class="chip chip-neutral">Schema Design</span><span class="chip chip-neutral">Normalisation</span><span class="chip chip-neutral">ER Modelling</span><span class="chip chip-neutral">Foreign Keys</span></div>
+          <div class="proj-outcome">✓ 13-table normalised schema · subtype pattern · full FK enforcement</div>
         </div>
         <div class="proj-num">02</div>
       </div>
 
       <div class="proj-card reveal">
         <div>
-          <div class="proj-tags"><span class="chip chip-green">Python</span><span class="chip chip-orange">SQL</span></div>
-          <div class="proj-course">CS 338 — Introduction to Machine Learning</div>
-          <h3 class="proj-title">Student Grade Prediction Model</h3>
-          <p class="proj-desc">Used a Kaggle student performance dataset — cleaned data in pandas, ran exploratory analysis, then trained and compared logistic regression, decision tree, and random forest classifiers with scikit-learn. Wrote a short SQL schema to simulate how the data might be stored in a school database. Summarised results in PowerPoint for the final presentation.</p>
-          <div class="skill-chips"><span class="chip chip-green">scikit-learn</span><span class="chip chip-green">pandas</span><span class="chip chip-orange">SQL</span><span class="chip chip-neutral">PowerPoint</span></div>
-          <div class="proj-outcome">✓ Random Forest: 88% test accuracy</div>
+          <div class="proj-tags"><span class="chip chip-green">Python</span><span class="chip chip-neutral">NLP</span></div>
+          <div class="proj-course">INFO-6148 &amp; INFO-6153 — NLP 1 &amp; NLP 2</div>
+          <h3 class="proj-title">Sentiment Analysis on Text Data</h3>
+          <p class="proj-desc">Analysed a corpus of text data to classify sentiment as positive, negative, or neutral — applying the full text analytics pipeline from raw input to actionable label. Preprocessed and explored the dataset to understand class distribution and common patterns before building features. Used TF-IDF vectorisation to quantify word importance, then trained and evaluated multiple classifiers in scikit-learn. Extended in NLP 2 with transformer-based approaches and compared performance across methods.</p>
+          <div class="skill-chips"><span class="chip chip-green">Python</span><span class="chip chip-green">NLTK</span><span class="chip chip-neutral">TF-IDF</span><span class="chip chip-neutral">scikit-learn</span><span class="chip chip-blue">Transformers</span><span class="chip chip-neutral">EDA</span></div>
+          <div class="proj-outcome">✓ 3-class classifier · end-to-end text analytics pipeline</div>
         </div>
         <div class="proj-num">03</div>
       </div>
 
       <div class="proj-card reveal">
         <div>
-          <div class="proj-tags"><span class="chip chip-neutral">Excel</span><span class="chip chip-neutral">PowerPoint</span></div>
-          <div class="proj-course">STAT 230 — Statistics for Data Science</div>
-          <h3 class="proj-title">Housing Market Exploratory Analysis</h3>
-          <p class="proj-desc">Downloaded a publicly available housing price dataset and performed full exploratory analysis in Excel — cleaning missing values, building pivot tables by region and year, and charting price trends. Wrote a summary report and presented a 10-slide deck covering methodology, visualisations, and key takeaways.</p>
-          <div class="skill-chips"><span class="chip chip-neutral">Excel</span><span class="chip chip-neutral">Pivot Tables</span><span class="chip chip-neutral">PowerPoint</span><span class="chip chip-green">Data Cleaning</span></div>
-          <div class="proj-outcome">✓ 92% course grade</div>
+          <div class="proj-tags"><span class="chip chip-green">Python</span><span class="chip chip-green">TensorFlow</span><span class="chip chip-green">PyTorch</span></div>
+          <div class="proj-course">INFO-6156 — Capstone Project</div>
+          <h3 class="proj-title">Model Performance Comparison: CNN vs. Vision Transformer</h3>
+          <p class="proj-desc">Ran a controlled experiment comparing two image classification architectures — CNNs and Vision Transformers — on the CIFAR-10 benchmark. The analytical focus was on measuring and explaining performance differences: tracking accuracy, loss curves, and convergence speed across training runs with varying regularisation and augmentation settings. Documented findings in a structured report covering methodology, results tables, and interpretation of trade-offs between the two approaches — the kind of rigorous analysis that translates to any A/B or model comparison scenario.</p>
+          <div class="skill-chips"><span class="chip chip-green">TensorFlow/Keras</span><span class="chip chip-green">PyTorch</span><span class="chip chip-neutral">Experiment Design</span><span class="chip chip-neutral">Performance Analysis</span><span class="chip chip-neutral">CIFAR-10</span></div>
+          <div class="proj-outcome">✓ Capstone grade: A · structured experiment report · Dean's Honour Roll term</div>
         </div>
         <div class="proj-num">04</div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div>
+          <div class="proj-tags"><span class="chip chip-green">Python</span><span class="chip chip-orange">SQL</span><span class="chip chip-blue">LangChain</span></div>
+          <div class="proj-course">Personal Project</div>
+          <h3 class="proj-title">Agentic E-Commerce Platform — Data Pipeline &amp; Backend</h3>
+          <p class="proj-desc">Built the data layer for a headless e-commerce platform: a PostgreSQL schema on Neon backing a Medusa v2 storefront, with a FastAPI layer exposing structured endpoints for product, cart, and order data. Extended with LangChain agents that query and act on live store data — giving a practical look at how LLM outputs can be grounded in structured business data. The project reinforced end-to-end thinking about how data flows from a database through an API to an application layer.</p>
+          <div class="skill-chips"><span class="chip chip-orange">PostgreSQL</span><span class="chip chip-green">FastAPI</span><span class="chip chip-blue">LangChain</span><span class="chip chip-neutral">Medusa v2</span><span class="chip chip-neutral">Data Modelling</span></div>
+          <div class="proj-outcome">✓ Live PostgreSQL backend · structured API layer · agentic data querying</div>
+        </div>
+        <div class="proj-num">05</div>
       </div>
 
     </div>
@@ -388,14 +398,20 @@
       <h2 class="sec-title">Relevant <em>Coursework</em></h2>
     </div>
     <div class="courses-grid">
-      <div class="course-row reveal"><div class="course-icon">🧠</div><div><div class="course-name">Introduction to Machine Learning</div><div class="course-code">CS 338</div></div><div class="course-grade">A</div></div>
-      <div class="course-row reveal"><div class="course-icon">📊</div><div><div class="course-name">Statistics for Data Science</div><div class="course-code">STAT 230</div></div><div class="course-grade">A−</div></div>
-      <div class="course-row reveal"><div class="course-icon">🗄️</div><div><div class="course-name">Databases &amp; Information Systems</div><div class="course-code">CS 348</div></div><div class="course-grade">B+</div></div>
-      <div class="course-row reveal"><div class="course-icon">📈</div><div><div class="course-name">Business Analytics</div><div class="course-code">STAT 341</div></div><div class="course-grade">A</div></div>
-      <div class="course-row reveal"><div class="course-icon">🐍</div><div><div class="course-name">Data Analysis with Python</div><div class="course-code">CS 116</div></div><div class="course-grade">A+</div></div>
-      <div class="course-row reveal"><div class="course-icon">🤖</div><div><div class="course-name">Intro to NLP &amp; Generative AI</div><div class="course-code">CS 492</div></div><div class="course-grade">A−</div></div>
-      <div class="course-row reveal"><div class="course-icon">🔢</div><div><div class="course-name">Linear Algebra for Data Science</div><div class="course-code">MATH 136</div></div><div class="course-grade">B+</div></div>
-      <div class="course-row reveal"><div class="course-icon">📉</div><div><div class="course-name">Applied Regression &amp; Forecasting</div><div class="course-code">STAT 332</div></div><div class="course-grade">A−</div></div>
+      <div class="course-row reveal"><div class="course-icon">🐍</div><div><div class="course-name">Python Programming</div><div class="course-code">INFO-6143 · Summer 2025</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">🗄️</div><div><div class="course-name">Databases — Intro</div><div class="course-code">INFO-6120 · Summer 2025</div></div><div class="course-grade">B</div></div>
+      <div class="course-row reveal"><div class="course-icon">📊</div><div><div class="course-name">Data Science &amp; Machine Learning</div><div class="course-code">INFO-6145 · Summer 2025</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">📈</div><div><div class="course-name">Data Visualization for ML</div><div class="course-code">INFO-6151 · Fall 2025</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">🔍</div><div><div class="course-name">Data Mining &amp; Analysis</div><div class="course-code">INFO-6150 · Fall 2025</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">📱</div><div><div class="course-name">Social Media Analytics</div><div class="course-code">INFO-6155 · Winter 2026</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">💬</div><div><div class="course-name">Natural Language Processing 1</div><div class="course-code">INFO-6148 · Fall 2025</div></div><div class="course-grade">B+</div></div>
+      <div class="course-row reveal"><div class="course-icon">💬</div><div><div class="course-name">Natural Language Processing 2</div><div class="course-code">INFO-6153 · Winter 2026</div></div><div class="course-grade">A+</div></div>
+      <div class="course-row reveal"><div class="course-icon">⚙️</div><div><div class="course-name">ML Optimization Strategies</div><div class="course-code">INFO-6154 · Winter 2026</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">🔥</div><div><div class="course-name">TensorFlow &amp; Keras with Python</div><div class="course-code">INFO-6146 · Fall 2025</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">🤖</div><div><div class="course-name">Deep Learning with PyTorch</div><div class="course-code">INFO-6147 · Fall 2025</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">🏆</div><div><div class="course-name">Capstone Project</div><div class="course-code">INFO-6156 · Winter 2026</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">🛡️</div><div><div class="course-name">Machine Learning Security</div><div class="course-code">INFO-6149 · Fall 2025</div></div><div class="course-grade">A</div></div>
+      <div class="course-row reveal"><div class="course-icon">🧠</div><div><div class="course-name">Deep Learning with TF &amp; Keras 2</div><div class="course-code">INFO-6152 · Winter 2026</div></div><div class="course-grade">A</div></div>
     </div>
   </div>
 </section>
@@ -409,15 +425,14 @@
     </div>
     <div class="contact-split">
       <div class="contact-left">
-        <h3>Looking for my first ML/AI co-op.</h3>
-        <p>I'm eager to apply what I've learned in school to real problems. I work hard, learn fast, and I'm genuinely excited about data and AI. If you have a co-op role or just want to chat, I'd love to hear from you.</p>
-        <div class="contact-avail"><div class="avail-dot"></div> Available — Winter &amp; Summer 2026</div>
+        <h3>Looking for a Data Analyst role in Toronto or remote.</h3>
+        <p>I've built dashboards, written SQL schemas, analysed real datasets, and presented findings to real audiences. I'm ready to bring that to a team — and I learn fast when the problems are new. If you have something that fits, I'd love to hear from you.</p>
       </div>
       <div class="contact-right">
         <ul class="contact-links">
-          <li><a href="mailto:jamie.park@uwaterloo.ca"><span class="clink-icon">✉</span> jamie.park@uwaterloo.ca</a></li>
-          <li><a href="#"><span class="clink-icon">in</span> linkedin.com/in/jamiepark</a></li>
-          <li><a href="#"><span class="clink-icon">gh</span> github.com/jamiepark-ds</a></li>
+          <li><a href="mailto:toritseju.besidone@fanshaweonline.ca"><span class="clink-icon">✉</span> besidonet@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/toju-besidone-22aa1a1a0/" target="_blank"><span class="clink-icon">in</span> linkedin.com/in/toju-besidone</a></li>
+          <li><a href="https://github.com/Besidonet" target="_blank"><span class="clink-icon">gh</span> github.com/Besidonet</a></li>
           <li><a href="#"><span class="clink-icon">📄</span> Download Resume (PDF)</a></li>
         </ul>
       </div>
@@ -427,13 +442,13 @@
 
 <div class="wrap">
   <footer>
-    <p>© 2026 Jamie Park · Data Science · University of Waterloo</p>
+    <p>© 2026 Toju Besidone · Data Analyst · Fanshawe College · Vaughan, ON</p>
     <div class="footer-chips">
-      <span class="chip chip-green">Python</span>
       <span class="chip chip-orange">SQL</span>
       <span class="chip chip-blue">Power BI</span>
+      <span class="chip chip-green">Python</span>
       <span class="chip chip-neutral">Excel</span>
-      <span class="chip chip-green">LLMs</span>
+      <span class="chip chip-neutral">Data Storytelling</span>
     </div>
   </footer>
 </div>
@@ -447,13 +462,13 @@
   Chart.defaults.font.size   = 11;
   Chart.defaults.color       = muted;
 
-  // Bar — hours by tool
+  // Bar — hours by analytical tool (SQL and Power BI lead)
   new Chart(document.getElementById('barChart'), {
     type: 'bar',
     data: {
-      labels: ['Python', 'SQL', 'Excel', 'Power BI', 'LLMs', 'PowerPoint'],
-      datasets: [{ label: 'Hours', data: [120, 65, 55, 40, 30, 45],
-        backgroundColor: [green, orange, '#6b8f5e', blue, '#7c6af5', muted],
+      labels: ['Python', 'SQL', 'Power BI', 'Excel', 'Statistics', 'Reporting'],
+      datasets: [{ label: 'Hours', data: [130, 90, 75, 55, 60, 45],
+        backgroundColor: [green, orange, blue, '#6b8f5e', '#7c6af5', muted],
         borderRadius: 3, borderWidth: 0 }]
     },
     options: {
@@ -466,13 +481,13 @@
     }
   });
 
-  // Donut — grades
+  // Donut — real grade distribution: A+=2, A=8, B+=1, B=1
   new Chart(document.getElementById('donutChart'), {
     type: 'doughnut',
     data: {
-      labels: ['A / A+', 'A−', 'B+'],
-      datasets: [{ data: [3, 3, 2],
-        backgroundColor: [green, '#6b8f5e', orange],
+      labels: ['A+ (4.2)', 'A (4.0)', 'B+ (3.5)', 'B (3.0)'],
+      datasets: [{ data: [2, 8, 1, 1],
+        backgroundColor: [green, '#6b8f5e', orange, '#c4956d'],
         borderColor: bg, borderWidth: 4, hoverOffset: 6 }]
     },
     options: {
@@ -481,16 +496,16 @@
     }
   });
 
-  // Line — confidence
+  // Line — analytical skill confidence
   new Chart(document.getElementById('lineChart'), {
     type: 'line',
     data: {
-      labels: ['1A', '1B', '2A', '2B'],
+      labels: ['Summer 2025', 'Fall 2025', 'Winter 2026'],
       datasets: [
-        { label: 'Python',   data: [2, 3, 4, 4.5], borderColor: green,  backgroundColor: 'rgba(45,90,61,0.07)',   tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 },
-        { label: 'SQL',      data: [1, 2, 3.5, 4],  borderColor: orange, backgroundColor: 'rgba(196,98,45,0.07)', tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 },
-        { label: 'Power BI', data: [1, 1.5, 3, 3.8],borderColor: blue,   backgroundColor: 'rgba(43,74,140,0.07)', tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 },
-        { label: 'LLMs',     data: [1, 1, 2, 3],    borderColor: '#7c6af5', backgroundColor: 'rgba(124,106,245,0.07)', tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 }
+        { label: 'SQL',      data: [2.5, 3.5, 4.5], borderColor: orange, backgroundColor: 'rgba(196,98,45,0.07)',  tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 },
+        { label: 'Python',   data: [3,   4,   4.5],  borderColor: green,  backgroundColor: 'rgba(45,90,61,0.07)',   tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 },
+        { label: 'Power BI', data: [1,   3,   4],    borderColor: blue,   backgroundColor: 'rgba(43,74,140,0.07)', tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 },
+        { label: 'Excel',    data: [3,   3.5, 4],    borderColor: '#7c6af5', backgroundColor: 'rgba(124,106,245,0.07)', tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2 }
       ]
     },
     options: {
@@ -503,12 +518,12 @@
     }
   });
 
-  // Radar — tool usage
+  // Radar — tool usage across projects
   new Chart(document.getElementById('radarChart'), {
     type: 'radar',
     data: {
-      labels: ['Python', 'SQL', 'Power BI', 'Excel', 'LLMs', 'PowerPoint'],
-      datasets: [{ label: 'Times Used', data: [4, 3, 2, 3, 1, 4],
+      labels: ['SQL', 'Power BI', 'Python', 'Excel', 'Statistics', 'Reporting'],
+      datasets: [{ label: 'Times Used', data: [4, 3, 5, 3, 4, 4],
         backgroundColor: 'rgba(45,90,61,0.15)', borderColor: green,
         pointBackgroundColor: green, borderWidth: 2, pointRadius: 4 }]
     },
